@@ -1,0 +1,74 @@
+AllCops:
+  Exclude:
+    - "vendor/**/*" # rubocop config/default.yml
+    - "db/**/*"
+    - "spec/**/*"
+    - "config/**/*"
+    - "bin/*"
+    - "node_modules/**/*"
+    - "Gemfile"
+
+# 行が長すぎる
+Metrics/LineLength:
+  Max: 120
+  Exclude:
+    - "Rakefile"
+    - "spec/rails_helper.rb"
+    - "spec/spec_helper.rb"
+
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+
+# Assignment : 変数への代入
+# Branch : メソッド呼び出し
+# Condition : 条件文
+Metrics/AbcSize:
+  Max: 50
+
+# メソッドの複数さを数値化したものを計算しチェック
+Metrics/PerceivedComplexity:
+  Max: 8
+
+# 空メソッドの場合だけ1行で書かなければいけない理由が無い
+# 「セミコロンは使わない」に寄せた方がルールがシンプル
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+# 循環的複雑度が高すぎる(ifやforなどを1メソッド内で使いすぎている)
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+# メソッドの行数が多すぎる
+Metrics/MethodLength:
+  Max: 30
+
+# ネストが深すぎる
+Metrics/BlockNesting:
+  Max: 5
+
+# クラスの行数が多すぎる
+Metrics/ClassLength:
+  Enabled: false
+
+# モジュール名::クラス名の定義を許可
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# 日本語でのコメントを許可
+Style/AsciiComments:
+  Enabled: false
+
+# クラスにコメントを残さない
+Style/Documentation:
+  Enabled: false
+
+# メソッドパラメータ名のチェック
+Naming/MethodParameterName:
+  MinNameLength: 1
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
